@@ -24,6 +24,7 @@ window.onclick = function(event) {
     }
 }
 
+// might not really need this...
 $('.js-autofocus js-display-name').on("keyup", action);
 function action() {
    if($('.js-autofocus js-display-name').val().length > 0) {
