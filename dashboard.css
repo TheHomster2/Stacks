@@ -98,3 +98,14 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+.board {
+  background-color: lightgray;
+  max-width: 20rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  border-radius: 8px;
+  margin-right: 4px;
+}
