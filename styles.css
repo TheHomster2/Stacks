@@ -32,12 +32,12 @@ body {
   left: 17%;
 }
 .pop-overis-shown {
+    left: 5px; 
+    top: 211px; 
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
 }
