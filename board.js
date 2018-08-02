@@ -7,5 +7,5 @@
 // var addCardButton =
 
 function addCard() {
-  document.getElementsByClassName("board").getElementById("new-cards").innerHTML = "<h1>Hello</h1>"
+  document.querySelector(".board").getElementsByClassName(".addCardButton")[0].innerHTML = "<h1>Hello</h1>"
 }
