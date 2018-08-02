@@ -109,3 +109,7 @@ body {
   border-radius: 8px;
   margin-right: 4px;
 }
+.progress{
+  border: 1px solid black;
+  width: 40%;
+}
