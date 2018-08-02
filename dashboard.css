@@ -100,7 +100,7 @@ body {
 }
 
 .board {
-  background-color: lightgray;
+  background-color: whitesmoke;
   max-width: 20rem;
   padding-left: 10px;
   padding-right: 10px;
@@ -111,5 +111,5 @@ body {
 }
 .progress{
   border: 1px solid black;
-  width: 40%;
+  width: 35rem;
 }
