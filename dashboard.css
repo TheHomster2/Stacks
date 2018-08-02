@@ -108,6 +108,8 @@ body {
   display: inline-block;
   border-radius: 8px;
   margin-right: 4px;
+  overflow: auto;
+
 }
 .progress{
   border: 1px solid black;

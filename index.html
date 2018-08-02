@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Stack</title>
 
@@ -13,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
     <link href="dashboard.css" rel="stylesheet">
   </head>
 
@@ -148,6 +148,9 @@
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
               </div>
+                  <button class="btn btn-sm btn-outline-secondary" style="width: 100%;">
+                      <span data-feather="plus"></span> Add another list
+                  </button>
           </div>
           <div class="board">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
@@ -167,8 +170,20 @@
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                     </div>
               </div> 
+                  <button class="btn btn-sm btn-outline-secondary" style="width: 100%;">
+                      <span data-feather="plus"></span> Add another list
+                  </button>
           </div>
-        </main>
+          <div class="board">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
+                <div style="width: 18rem;">
+                    <button class="btn btn-sm btn-outline-secondary" style="width: 100%;">
+                        <span data-feather="plus"></span> Add another list
+                    </button>
+                </div> 
+              </div>
+            </div>
+          </main>
       </div>
     </div>
 
@@ -183,33 +198,6 @@
       feather.replace()
     </script>
     <script src="project.js"></script>
+    <script src="board.js"></script>
   </body>
 </html>
-
-<!-- <div class="pop-over is-shown" style="left: 5px; top: 211px;">
-  <div class="no-back"><div class="pop-over-header js-pop-over-header">
-    <span class="pop-over-header-title">Create Project</span>
-    <a href="#" class="pop-over-header-close-btn icon-sm icon-close">::before</a>
-  </div>
-  <div>
-    <div class="pop-over-content js-pop-over-content u-fancy-scrollbar js-tab-parent" style="max-height: 532px;">
-      <div>
-        <div>
-          <form>
-            <p class="error" style="display:none"></p>
-            <label for="org-display-name">Name</label>
-            <input id="org-display-name" class="js-autofocus js-display-name" type="text" name="displayName" value="" dir="auto" maxlength="100">
-            <label for="org-desc">Description 
-              <span class="quiet u-font-weight-normal">(optional)</span>
-            </label>
-            <textarea id="org-desc" name="desc" dir="auto"></textarea>
-            <input class="primary wide js-save" type="submit" value="Create" disabled="">
-          </form>
-          <hr>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- -->
