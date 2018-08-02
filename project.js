@@ -24,4 +24,11 @@ window.onclick = function(event) {
     }
 }
 
-document.getElementsByClassName("Board").getElementsByClassName("cards-select")
+$('.js-autofocus js-display-name').on("keyup", action);
+function action() {
+   if($('.js-autofocus js-display-name').val().length > 0) {
+      $('.primary wide js-save').prop("disabled", false);
+   }else {
+      $('.primary wide js-save').prop("disabled", true);
+   }
+}
