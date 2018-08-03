@@ -1,7 +1,5 @@
 'use strict';
 
-const e = React.createElement;
-
 class Test extends React.Component {
   constructor(props) {
     super(props);
@@ -13,12 +11,13 @@ class Test extends React.Component {
       return 'You liked this.';
     }
 
-    return e(
-      'button',
-      { onClick: () => this.setState({ liked: true }) },
-      'Like'
+    return (
+      <button onClick={() => this.setState({ liked: true }) }>
+        Like
+      </button>
     );
   }
 }
-const domContainer = document.querySelector('#boardss');
-ReactDOM.render(e(Test), domContainer);
+
+let domContainer = document.querySelector('#boardss');
+ReactDOM.render(<Test />, domContainer);
