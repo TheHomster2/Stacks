@@ -4,6 +4,8 @@
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
+    background: white;
+    box-shadow: 2px 2px 5px black;
 }
 .no-back{
    border: 1px solid black;
