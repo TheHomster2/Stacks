@@ -8,7 +8,7 @@
 
 var modal = document.querySelector(".pop-overis-shown");
 var button = document.querySelector(".add_button1");
-var span = document.getElementsByClassName("pop-over-header-close-btnicon-smicon-close")[0];
+var span = document.getElementsByClassName("pop-up-close")[0];
 
 button.onclick = function(){
 	modal.style.display = "block";
