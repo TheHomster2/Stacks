@@ -24,12 +24,11 @@ window.onclick = function(event) {
     }
 }
 
-// might not really need this...
-$('.js-autofocus js-display-name').on("keyup", action);
+$('.pop-up-input').on("keyup", action);
 function action() {
-   if($('.js-autofocus js-display-name').val().length > 0) {
-      $('.primary wide js-save').prop("disabled", false);
+   if($('.pop-up-input').val().length > 0) {
+      $('.submit').prop("disabled", false);
    }else {
-      $('.primary wide js-save').prop("disabled", true);
+      $('.submit').prop("disabled", true);
    }
 }
