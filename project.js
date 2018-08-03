@@ -24,6 +24,16 @@ window.onclick = function(event) {
     }
 }
 
+document.getElementById('submit').onclick = function(){
+  var newEl = document.createElement('li');
+  var newText = document.createTextNode('node');
+  newEl.appendChild(newText);
+  var project_name = document.getElementById("org-display-name").value;
+  var entry = '<li class="nav-item"><a class="nav-link" href="#"><span data-feather="hash"></span>' + project_name + "</a></li>";
+  document.getElementById("nav flex-column mb-1").appendChild(entry);
+
+}
+
 $('.pop-up-input').on("keyup", action);
 function action() {
    if($('.pop-up-input').val().length > 0) {
