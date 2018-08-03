@@ -13,7 +13,6 @@
 $(document).ready(function(){
 var cards = document.getElementsByClassName('cards-select').length;
 var successCards = $('.cards-select.bg-success').length;
-document.getElementById('progress-bar').style.width = ( 100 * (successCards/cards)) + '%';
-document.getElementById('progress-bar').innerHTML = (100 * (successCards/cards)) + '%';
-
+document.getElementById('progress-bar').style.width = (Math.round(( 100 * (successCards/cards)))) + '%';
+document.getElementById('progress-bar').innerHTML = (Math.round((100 * (successCards/cards)))) + '%';
 });
