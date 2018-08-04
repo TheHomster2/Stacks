@@ -8,27 +8,35 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Router = function (_React$Component) {
-  _inherits(Router, _React$Component);
+var GroupNav = function (_React$Component) {
+  _inherits(GroupNav, _React$Component);
 
-  function Router(props) {
-    _classCallCheck(this, Router);
+  function GroupNav(props) {
+    _classCallCheck(this, GroupNav);
 
-    var _this = _possibleConstructorReturn(this, (Router.__proto__ || Object.getPrototypeOf(Router)).call(this, props));
-
-    _this.state = { liked: false };
-    return _this;
+    return _possibleConstructorReturn(this, (GroupNav.__proto__ || Object.getPrototypeOf(GroupNav)).call(this, props));
   }
 
-  _createClass(Router, [{
-    key: 'render',
+  _createClass(GroupNav, [{
+    key: "render",
     value: function render() {
-      return j;
+      return React.createElement(
+        "li",
+        { "class": "nav-item" },
+        React.createElement(
+          "a",
+          { "class": "nav-link", href: "#" },
+          React.createElement("span", { "data-feather": "hash" }),
+          " Group 1"
+        )
+      );
     }
   }]);
 
-  return Router;
+  return GroupNav;
 }(React.Component);
 
-var domContainer = document.querySelector('#groupCell');
-ReactDOM.render(React.createElement(Router, null), domContainer);
+document.querySelectorAll('.groupCell').forEach(function (domContainer) {
+  var commentID = parseInt(domContainer.dataset.commentid, 10);
+  ReactDOM.render(React.createElement(GroupNav, null), domContainer);
+});

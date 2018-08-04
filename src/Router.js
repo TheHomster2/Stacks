@@ -7,17 +7,11 @@ class Router extends React.Component {
   }
 
   render() {
-    if (this.state.liked) {
-      return 'You liked this.';
-    }
-
     return (
-      <button onClick={() => this.setState({ liked: true }) }>
-        Like
-      </button>
+      j
     );
   }
 }
 
-let domContainer = document.querySelector('#board');
+let domContainer = document.querySelector('#groupCell');
 ReactDOM.render(<Router />, domContainer);
