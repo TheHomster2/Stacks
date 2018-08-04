@@ -1,6 +1,6 @@
 'use strict';
 
-class Cards extends React.Component {
+class Router extends React.Component {
   constructor(props) {
     super(props);
     this.state = { liked: false };
@@ -20,4 +20,4 @@ class Cards extends React.Component {
 }
 
 let domContainer = document.querySelector('#board');
-ReactDOM.render(<Cards />, domContainer);
+ReactDOM.render(<Router />, domContainer);
