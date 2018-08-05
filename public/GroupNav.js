@@ -8,38 +8,35 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Test = function (_React$Component) {
-  _inherits(Test, _React$Component);
+var GroupNav = function (_React$Component) {
+  _inherits(GroupNav, _React$Component);
 
-  function Test(props) {
-    _classCallCheck(this, Test);
+  function GroupNav(props) {
+    _classCallCheck(this, GroupNav);
 
-    var _this = _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).call(this, props));
-
-    _this.state = { liked: false };
-    return _this;
+    return _possibleConstructorReturn(this, (GroupNav.__proto__ || Object.getPrototypeOf(GroupNav)).call(this, props));
   }
 
-  _createClass(Test, [{
-    key: 'render',
+  _createClass(GroupNav, [{
+    key: "render",
     value: function render() {
-      var _this2 = this;
-
-      if (this.state.liked) {
-        return 'You liked this.';
-      }
-
       return React.createElement(
-        'button',
-        { onClick: function onClick() {
-            return _this2.setState({ liked: true });
-          } },
-        'Like'
+        "li",
+        { "class": "nav-item" },
+        React.createElement(
+          "a",
+          { "class": "nav-link", href: "#" },
+          React.createElement("span", { "data-feather": "hash" }),
+          " Group 1"
+        )
       );
     }
   }]);
 
-  return Test;
+  return GroupNav;
 }(React.Component);
-// let domContainer = document.querySelector('#boardss');
-// ReactDOM.render(<Test />, domContainer);
+
+document.querySelectorAll('.groupCell').forEach(function (domContainer) {
+  var commentID = parseInt(domContainer.dataset.commentid, 10);
+  ReactDOM.render(React.createElement(GroupNav, null), domContainer);
+});

@@ -18,6 +18,5 @@ class Test extends React.Component {
     );
   }
 }
-
-let domContainer = document.querySelector('#boardss');
-ReactDOM.render(<Test />, domContainer);
+// let domContainer = document.querySelector('#boardss');
+// ReactDOM.render(<Test />, domContainer);

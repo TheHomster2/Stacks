@@ -8,38 +8,45 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Test = function (_React$Component) {
-  _inherits(Test, _React$Component);
+var Navbar = function (_React$Component) {
+  _inherits(Navbar, _React$Component);
 
-  function Test(props) {
-    _classCallCheck(this, Test);
+  function Navbar(props) {
+    _classCallCheck(this, Navbar);
 
-    var _this = _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).call(this, props));
-
-    _this.state = { liked: false };
-    return _this;
+    return _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
   }
 
-  _createClass(Test, [{
-    key: 'render',
+  _createClass(Navbar, [{
+    key: "render",
     value: function render() {
-      var _this2 = this;
-
-      if (this.state.liked) {
-        return 'You liked this.';
-      }
-
       return React.createElement(
-        'button',
-        { onClick: function onClick() {
-            return _this2.setState({ liked: true });
-          } },
-        'Like'
+        "nav",
+        { "class": "navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" },
+        React.createElement(
+          "a",
+          { "class": "navbar-brand col-sm-3 col-md-2 mr-0", href: "#" },
+          "Stack"
+        ),
+        React.createElement(
+          "ul",
+          { "class": "navbar-nav px-3" },
+          React.createElement(
+            "li",
+            { "class": "nav-item text-nowrap" },
+            React.createElement(
+              "a",
+              { "class": "nav-link", href: "#" },
+              "Sign out"
+            )
+          )
+        )
       );
     }
   }]);
 
-  return Test;
+  return Navbar;
 }(React.Component);
-// let domContainer = document.querySelector('#boardss');
-// ReactDOM.render(<Test />, domContainer);
+
+var domContainer = document.querySelector('#navbarId');
+ReactDOM.render(React.createElement(Navbar, null), domContainer);

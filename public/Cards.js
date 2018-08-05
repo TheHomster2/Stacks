@@ -8,19 +8,19 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Test = function (_React$Component) {
-  _inherits(Test, _React$Component);
+var Cards = function (_React$Component) {
+  _inherits(Cards, _React$Component);
 
-  function Test(props) {
-    _classCallCheck(this, Test);
+  function Cards(props) {
+    _classCallCheck(this, Cards);
 
-    var _this = _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Cards.__proto__ || Object.getPrototypeOf(Cards)).call(this, props));
 
     _this.state = { liked: false };
     return _this;
   }
 
-  _createClass(Test, [{
+  _createClass(Cards, [{
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -39,7 +39,8 @@ var Test = function (_React$Component) {
     }
   }]);
 
-  return Test;
+  return Cards;
 }(React.Component);
-// let domContainer = document.querySelector('#boardss');
-// ReactDOM.render(<Test />, domContainer);
+
+var domContainer = document.querySelector('#board');
+ReactDOM.render(React.createElement(Cards, null), domContainer);

@@ -8,38 +8,27 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Test = function (_React$Component) {
-  _inherits(Test, _React$Component);
+var Router = function (_React$Component) {
+  _inherits(Router, _React$Component);
 
-  function Test(props) {
-    _classCallCheck(this, Test);
+  function Router(props) {
+    _classCallCheck(this, Router);
 
-    var _this = _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Router.__proto__ || Object.getPrototypeOf(Router)).call(this, props));
 
     _this.state = { liked: false };
     return _this;
   }
 
-  _createClass(Test, [{
+  _createClass(Router, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
-      if (this.state.liked) {
-        return 'You liked this.';
-      }
-
-      return React.createElement(
-        'button',
-        { onClick: function onClick() {
-            return _this2.setState({ liked: true });
-          } },
-        'Like'
-      );
+      return j;
     }
   }]);
 
-  return Test;
+  return Router;
 }(React.Component);
-// let domContainer = document.querySelector('#boardss');
-// ReactDOM.render(<Test />, domContainer);
+
+var domContainer = document.querySelector('#groupCell');
+ReactDOM.render(React.createElement(Router, null), domContainer);

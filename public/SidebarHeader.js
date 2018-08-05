@@ -8,38 +8,43 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Test = function (_React$Component) {
-  _inherits(Test, _React$Component);
+var SidebarHeader = function (_React$Component) {
+  _inherits(SidebarHeader, _React$Component);
 
-  function Test(props) {
-    _classCallCheck(this, Test);
+  function SidebarHeader(props) {
+    _classCallCheck(this, SidebarHeader);
 
-    var _this = _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).call(this, props));
-
-    _this.state = { liked: false };
-    return _this;
+    return _possibleConstructorReturn(this, (SidebarHeader.__proto__ || Object.getPrototypeOf(SidebarHeader)).call(this, props));
   }
 
-  _createClass(Test, [{
-    key: 'render',
+  _createClass(SidebarHeader, [{
+    key: "render",
     value: function render() {
-      var _this2 = this;
-
-      if (this.state.liked) {
-        return 'You liked this.';
-      }
-
       return React.createElement(
-        'button',
-        { onClick: function onClick() {
-            return _this2.setState({ liked: true });
-          } },
-        'Like'
+        "h6",
+        { "class": "sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted" },
+        React.createElement(
+          "span",
+          null,
+          "Messaging"
+        ),
+        React.createElement(
+          "button",
+          { "class": "add_button1 btn btn-light" },
+          React.createElement(
+            "a",
+            { "class": "d-flex align-items-center text-muted", href: "#" },
+            React.createElement("span", { "data-feather": "plus-circle" })
+          )
+        )
       );
     }
   }]);
 
-  return Test;
+  return SidebarHeader;
 }(React.Component);
-// let domContainer = document.querySelector('#boardss');
-// ReactDOM.render(<Test />, domContainer);
+
+document.querySelectorAll('.messageSidebarHeader').forEach(function (domContainer) {
+  var commentID = parseInt(domContainer.dataset.commentid, 10);
+  ReactDOM.render(React.createElement(SidebarHeader, null), domContainer);
+});

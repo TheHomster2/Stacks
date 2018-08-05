@@ -37,9 +37,12 @@
             </ul>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Groups</span>
-              <!-- <a class="d-flex align-items-center text-muted" href="#"> -->
-              <button class = "add_button1"><span data-feather="plus-circle"></span></button>
+                <span>Groups</span>
+              <button class = "add_button1 btn btn-light">
+                <a class="d-flex align-items-center text-muted" href="#">
+                  <span data-feather="plus-circle"></span>
+                </a>
+              </button>
               <div class="pop-overis-shown">
                 <div class="no-back">
                   <div class="pop-over-headerjs-pop-over-header">
@@ -58,7 +61,6 @@
                   </div>                    
                 </div>
               </div>
-              <!-- </a> -->
             </h6>
             <ul class="nav flex-column mb-1" id = "nav flex-column mb-1">
               <div class="groupCell" data-commentid="1"></div>
@@ -67,12 +69,7 @@
               <div class="groupCell" data-commentid="4"></div>
               <div class="groupCell" data-commentid="5"></div>
             </ul>
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Messaging</span>
-              <a class="d-flex align-items-center text-muted" href="#">
-                <button class = add_button2><span data-feather="plus-circle"></span></button>
-              </a>
-            </h6>
+            <div class="messageSidebarHeader"> </div>
             <ul class="nav flex-column mb-2">
               <div class="userCell" data-commentid="1"></div>
               <div class="userCell" data-commentid="2"></div>
@@ -114,56 +111,25 @@
                     </button>
                   </div>
                 </div>
-             </div>
+              </div>
               <div class="card text-white bg-success mb-3 cards-select" style="max-width: 18rem;">
-                  <div class="card-header d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
-                    Finish button
-                    <div>
-                      <span data-feather="check-circle"></span>
-                      Jul 4
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Joe Suzuki </h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-              </div>
-              <div class="addCardButton"> 
-                <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" onClick="addCard()">
-                    <span data-feather="plus"></span> Add another card
-                </button>
-              </div>
-          </div>
-          <div class="board">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
-              <h1 class="h6" style="display: inline-block;">Finished</h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                  <div class="btn-group mr-2">
-                     <button class="btn btn-sm btn btn-light" style="display: inline-block;">
-                      <span data-feather="more-horizontal"></span>
-                      </button>
-                  </div> 
-                </div>
-              </div>
-              <div class="card bg-light mb-3 cards-select" style="max-width: 18rem;">
-                <div class="card-header d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">Finish popup
+                <div class="card-header d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
+                  Finish button
                   <div>
-                    <span data-feather="alert-circle"></span>
-                    Aug 10
-                  </div>    
+                    <span data-feather="check-circle"></span>
+                    Jul 4
+                  </div>
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Anthony Hom</h5>
+                  <h5 class="card-title">Joe Suzuki </h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
-              </div> 
-              <!-- <div id="boardss"> 
-
-              </div> -->
-              <div class="addCardButton"> 
-                <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" onClick="addCard()">
-                    <span data-feather="plus"></span> Add another card
-                </button>
+              </div>
+              <!-- <div class="AddCardForm"></div>  -->
+            <div class="addCardButton"> 
+              <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" onClick="addCard()">
+                <span data-feather="plus"></span> Add another card
+              </button>
             </div>
           </div>
           <div class="board">
@@ -183,10 +149,13 @@
     <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
     <!-- React components -->
-    <script src="Test.js"></script>
-    <script src="Navbar.js"></script>
-    <script src="GroupNav.js"></script>   
-    <script src="UserNav.js"></script>   
+    <script src="public/Test.js"></script>
+    <script src="public/Navbar.js"></script>
+    <script src="public/GroupNav.js"></script> 
+    <script src="public/SidebarHeader.js"></script>     
+    <script src="public/UserNav.js"></script>   
+    <script src="public/AddCardForm.js"></script>   
+    <script src="public/AddAnotherCardButton.js"></script>   
     <!-- Javscript files -->
     <script src="assets/javascript/project.js"></script>
     <script src="assets/javascript/card.js"></script>

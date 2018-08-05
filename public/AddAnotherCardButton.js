@@ -8,38 +8,35 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Test = function (_React$Component) {
-  _inherits(Test, _React$Component);
+var AddAnotherCardButton = function (_React$Component) {
+  _inherits(AddAnotherCardButton, _React$Component);
 
-  function Test(props) {
-    _classCallCheck(this, Test);
+  function AddAnotherCardButton(props) {
+    _classCallCheck(this, AddAnotherCardButton);
 
-    var _this = _possibleConstructorReturn(this, (Test.__proto__ || Object.getPrototypeOf(Test)).call(this, props));
-
-    _this.state = { liked: false };
-    return _this;
+    return _possibleConstructorReturn(this, (AddAnotherCardButton.__proto__ || Object.getPrototypeOf(AddAnotherCardButton)).call(this, props));
   }
 
-  _createClass(Test, [{
-    key: 'render',
+  _createClass(AddAnotherCardButton, [{
+    key: "render",
     value: function render() {
-      var _this2 = this;
-
-      if (this.state.liked) {
-        return 'You liked this.';
-      }
-
       return React.createElement(
-        'button',
-        { onClick: function onClick() {
-            return _this2.setState({ liked: true });
-          } },
-        'Like'
+        "div",
+        { "class": "addCardButton" },
+        React.createElement(
+          "button",
+          { "class": "btn btn-sm btn-outline-secondary", style: "width: 100%;", onClick: "addCard()" },
+          React.createElement("span", { "data-feather": "plus" }),
+          " Add another card"
+        )
       );
     }
   }]);
 
-  return Test;
+  return AddAnotherCardButton;
 }(React.Component);
-// let domContainer = document.querySelector('#boardss');
-// ReactDOM.render(<Test />, domContainer);
+
+document.querySelectorAll('.addAnotherCardButton').forEach(function (domContainer) {
+  var commentID = parseInt(domContainer.dataset.commentid, 10);
+  ReactDOM.render(React.createElement(AddAnotherCardButton, null), domContainer);
+});
