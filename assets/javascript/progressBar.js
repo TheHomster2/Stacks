@@ -14,12 +14,6 @@ $(document).ready(function(){
 var cards = document.getElementsByClassName('cards-select').length;
 var successCards = $('.cards-select.bg-success').length;
 var percentage = successCards / cards;
-if (percentage === NULL){
-	document.getElementById('progress-bar').style.width = '100%';
-	document.getElementById('progress-bar').innerHTML = '100%';
-}
-else{
 document.getElementById('progress-bar').style.width = (Math.round(( 100 * percentage))) + '%';
 document.getElementById('progress-bar').innerHTML = (Math.round((100 * percentage))) + '%';
-}
 });
