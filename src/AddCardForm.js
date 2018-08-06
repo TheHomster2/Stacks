@@ -8,17 +8,10 @@ class AddCardForm extends React.Component {
 
   render() {
     return (
-      <form>
-        <div class="form-group">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-        </div>
-        <button type="submit" class="btn btn-success btn-sm">Add Card</button>
-        <button class = "add_button1 btn btn-light">
-          <a class="d-flex align-items-center text-muted" href="#">
-            <span data-feather="x-circle"></span>
-          </a>
-        </button>
-      </form>                
+      <form id="newItemForm">
+        <input type="text" id="itemDescription" placeholder="Add description..." name="textField"/>
+        <input type="submit" id="addButton" value="add" name="submitButton"/>
+      </form>
     );
   }
 }

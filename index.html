@@ -15,7 +15,6 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="assets/stylesheet/styles.css">
     <link rel="stylesheet" href="assets/stylesheet/dashboard.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -124,12 +123,16 @@
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
               </div>
-              <!-- <div class="AddCardForm"></div>  -->
-            <div class="addCardButton"> 
-              <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" onClick="addCard()">
-                <span data-feather="plus"></span> Add another card
+              <ul id="boardCardList">
+                <li class="cardPart"><a href="">sfs</a></li>
+                <li class="cardPart"><a href="">sfs</a></li>
+                <li class="cardPart"><a href="">sfs</a></li>
+              </ul>
+            <div id="newItemButton">
+              <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" href="#" id="showForm"><span data-feather="plus"></span> Add another card
               </button>
             </div>
+            <div class="AddCardForm"></div> 
           </div>
           <div class="board">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
@@ -147,6 +150,7 @@
     <!-- React CDN -->
     <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- React components -->
     <script src="public/Test.js"></script>
     <script src="public/Navbar.js"></script>
@@ -159,6 +163,7 @@
     <script src="assets/javascript/project.js"></script>
     <script src="assets/javascript/card.js"></script>
     <script src="assets/javascript/progressBar.js"></script>
+    <script src="assets/javascript/form.js"></script>
     
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
