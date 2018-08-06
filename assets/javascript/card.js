@@ -52,27 +52,11 @@ function deleteCard(e) {
 var boardCardList = document.getElementById('boardCardList');
 if (boardCardList.addEventListener) {
   boardCardList.addEventListener('click', function(e) {
-    createCard(e);  
+    deleteCard(e);  
   }, false);
 } else {
   boardCardList.attachEvent('onclick', function(e){
-    createCard(e);  
+    deleteCard(e);  
   });
 }
-{/* <script>
-  $(document).ready(function() {
-    $("button").addClass("animated bounce");
-    $(".well").addClass("animated shake");
-    $("#target3").addClass("animated fadeOut");
-
-  });
-</script> */}
-// $("#target2").removeClass("btn-default");
-// $("#target1").css("color", "blue");
-// $("button").prop("disabled", true);
-
-// $("h3").html("<em>jQuery Playground</em>"); //or text() to change the text
-// $("#target4").remove();
-
-
 

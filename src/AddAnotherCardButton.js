@@ -8,16 +8,13 @@ class AddAnotherCardButton extends React.Component {
 
   render() {
     return (
-      <div class="addCardButton"> 
-      <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" onClick="addCard()">
-          <span data-feather="plus"></span> Add another card
-      </button>
-    </div>
-);
+        <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" href="#" id="showForm"><span data-feather="plus"></span> Add another card
+        </button>
+    );
   }
 }
 
-document.querySelectorAll('.addAnotherCardButton')
+document.querySelectorAll('.newItemButton')
   .forEach(domContainer => {
     const commentID = parseInt(domContainer.dataset.commentid, 10);
     ReactDOM.render(<AddAnotherCardButton />, domContainer);

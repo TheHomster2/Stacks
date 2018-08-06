@@ -42,3 +42,25 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+
+.colorArea input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #CCC;
+}
+
+.colorArea button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    background-color: #666;
+    color: #FFF;
+    border: 2px solid #666;
+}
+
+.colorArea button:hover {
+    background-color: #111;
+    border-color: #111;
+    cursor: pointer;
+}

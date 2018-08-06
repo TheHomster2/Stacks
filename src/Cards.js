@@ -12,12 +12,14 @@ class Cards extends React.Component {
     }
 
     return (
-      <button onClick={() => this.setState({ liked: true }) }>
-        Like
-      </button>
-    );
+      <ul id="boardCardList">
+        <li className="cardPart"><a href="">sfs</a></li>
+        <li className="cardPart"><a href="">sfs</a></li>
+        <li className="cardPart"><a href="">sfs</a></li>
+      </ul>
+      );
   }
 }
 
-let domContainer = document.querySelector('#board');
+let domContainer = document.querySelector('.cardList');
 ReactDOM.render(<Cards />, domContainer);
