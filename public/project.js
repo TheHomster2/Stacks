@@ -61,9 +61,9 @@ document.getElementById('submit').onclick = function(event){
 
 $('.pop-up-input').on("keyup", action);
 function action() {
-   if($('.pop-up-input').val().length > 0) {
-      $('.submit').prop("disabled", false);
+   if($(this).val() != '') {
+      $('.submit-button').prop("disabled", false);
    }else {
-      $('.submit').prop("disabled", true);
+      $('.submit-button').prop("disabled", true);
    }
 }

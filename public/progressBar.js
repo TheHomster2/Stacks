@@ -12,7 +12,7 @@
 
 $(document).ready(function(){
   var cards = document.getElementsByClassName('cards-select').length;
-  var successCards = $('.cards-select.bg-success').length;
+  var successCards = $('.cards-select.list-group-item-success').length;
   var percentage = successCards / cards;
   if(successCards < 1 || cards < 1) {
     percentage = 0;
