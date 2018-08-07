@@ -101,9 +101,16 @@ body {
   display: inline-block;
   border-radius: 8px;
   margin-right: 4px;
-  overflow: auto;
-
 }
+.container {
+  display: flex; 
+  align-items: flex-start;
+}
+
+.item {
+  align-self: flex-start;
+}
+
 .progress{
   border: 1px solid black;
   width: 35rem;
