@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Stack</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/client.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Navbars -->
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Stack</a>
+      <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Groups</span>
+              <!-- <a class="d-flex align-items-center text-muted" href="#"> -->
+                <button class = "add_button1"><span data-feather="plus-circle"></span></button>
+                <div class="pop-overis-shown">
+                  <div class="no-back">
+                    <div class="pop-over-headerjs-pop-over-header">
+                      <span class="">Create Project</span>
+                      <span>
+                        <a href="#" class="pop-up-close">&times;</a>
+                      </span>
+                    </div>      
+                    <div class="pop-over-contentjs-pop-over-contentu-fancy-scrollbarjs-tab-parent" style="max-height: 532px;">
+                        <form>
+                          <p class="error"></p>
+                          <label for="org-display-name">Name</label>
+                          <input class="pop-up-input" id="org-display-name"  type="text" name="displayName" value="" dir="auto" maxlength="100">
+                          <label for="org-desc">Description</label>
+                          <textarea class="pop-up-txt" name="org-desc" dir="auto"></textarea>
+                          <input class="submit-button" id = "submit" type="submit" value="Create">
+                        </form>
+                    </div>                    
+                  </div>
+                </div>
+              <!-- </a> -->
+            </h6>
+            <ul class="nav flex-column mb-1" id = "groupHeaderList">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="hash"></span>
+                  Group 1
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="hash"></span>
+                  Group 2
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="hash"></span>
+                  Group 3
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="hash"></span>
+                  Group 4
+                </a>
+              </li>
+            </ul>
+              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                  <span>Messaging</span>
+                  <a class="d-flex align-items-center text-muted" href="#">
+                    <button class="add_button2"><span data-feather="plus-circle"></span></button>
+                  </a>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span data-feather="user"></span>
+                      User 1
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span data-feather="user"></span>
+                      User 2
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span data-feather="user"></span>
+                      User 3
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <span data-feather="user"></span>
+                      User 4
+                    </a>
+                  </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Background area -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Group 1</h1>
+            <div class="progress" style="height: 30px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" id="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+          </div>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary"><span data-feather="bell"></span></button>
+                <button class="btn btn-sm btn-outline-secondary"><span data-feather="user-plus"></span></button>
+                <button class="btn btn-sm btn-outline-secondary"><span data-feather="settings"></span></button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>  
+
+          <!-- Stacks and Cards -->
+<!--           <div class="board">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
+              <h1 class="h6" style="display: inline-block;">Todo</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                  <div class="btn-group mr-2">
+                    <button class="btn btn-sm btn btn-light" style="display: inline-block;">
+                      <span data-feather="more-horizontal"></span>
+                    </button>
+                  </div>
+                </div>
+             </div>
+              <div class="card text-white bg-success mb-3 cards-select" style="max-width: 18rem;">
+                  <div class="card-header d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
+                    Finish button
+                    <div>
+                      <span data-feather="check-circle"></span>
+                      Jul 4
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Joe Suzuki </h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+              </div>
+              <div class="addCardButton"> 
+                <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" onclick="addCard()">
+                    <span data-feather="plus"></span> Add another card
+                </button>
+              </div>
+          </div>
+          <div class="board">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
+              <h1 class="h6" style="display: inline-block;">Finished</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                  <div class="btn-group mr-2">
+                     <button class="btn btn-sm btn btn-light" style="display: inline-block;">
+                      <span data-feather="more-horizontal"></span>
+                      </button>
+                  </div> 
+                </div>
+              </div>
+              <div class="card bg-light mb-3 cards-select" style="max-width: 18rem;">
+                <div class="card-header d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">Finish popup
+                  <div>
+                    <span data-feather="alert-circle"></span>
+                    Aug 10
+                  </div>    
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Anthony Hom</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div> 
+              <div id="boards"> 
+
+              </div>
+              <div class="addCardButton"> 
+                <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" onclick="addCard()">
+                    <span data-feather="plus"></span> Add another card
+                </button>
+            </div>
+          </div>
+          <div class="board">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
+                <div style="width: 18rem;">
+                  <button class="btn btn-sm btn-outline-secondary" style="width: 100%;">
+                      <span data-feather="plus"></span> Add another list
+                  </button>
+                </div> 
+              </div>
+            </div> -->
+          </main>
+      </div>
+    </div>
+
+    <!-- Loads page faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <script src="project.js"></script>
+    <script src="progressBar.js"></script>
+    <script src="card.js"></script>
+    <script src="form.js"></script>
+        
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+  </body>
+</html>

@@ -1,38 +1,28 @@
 {
-  "name": "Stacks",
-  "version": "1.0.0",
-  "description": "Schedule-building application",
-  "main": "Cards.js",
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "hello-sqlite",
+  "version": "0.0.1",
+  "description": "A simple Node app with SQLite as a database management system, instantly up and running.",
+  "main": "server.js",
   "scripts": {
-    "start": "webpack --mode development",
-    "build": "webpack --mode production"
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "sqlite3": "^4.0.0"
+  },
+  "engines": {
+    "node": "8.x"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TheHomster2/Stacks.git"
+    "url": "https://glitch.com/edit/#!/hello-sqlite"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TheHomster2/Stacks/issues"
-  },
-  "homepage": "https://github.com/TheHomster2/Stacks#readme",
-  "dependencies": {
-    "babel-preset-react-app": "^3.1.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-router-dom": "^4.3.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
-  }
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
 }
