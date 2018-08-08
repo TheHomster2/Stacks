@@ -26,27 +26,27 @@ db.serialize(function(){
     // this sets up the schema for your data! we can talk more about designing the schema for your app
     
     // Create User
-    db.run('CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, name TEXT, groups INTEGER ARRAY[0])');
-    // Create Group
-    db.run('CREATE TABLE group (id INTEGER PRIMARY KEY AUTOINCREMENT, owner TEXT, name_group TEXT)');
-    // Create Boards
-    db.run('CREATE TABLE boards (id INTEGER, name_board TEXT, group_id INTEGER PRIMARY KEY AUTOINCREMENT)');
-    // Create Tasks
-    db.run('CREATE TABLE tasks (id INTEGER, text_name TEXT, finish_date DATE)');
-    
+    // db.run('CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, name TEXT, groups INTEGER ARRAY[0])');
+    // // Create Group
+    // db.run('CREATE TABLE group (id INTEGER PRIMARY KEY AUTOINCREMENT, owner TEXT, name_group TEXT)');
+    // // Create Boards
+    // db.run('CREATE TABLE boards (id INTEGER, name_board TEXT, group_id INTEGER PRIMARY KEY AUTOINCREMENT)');
+    // // Create Tasks
+    db.run('CREATE TABLE tasks (id INTEGER PRIMARY KEY, text_name TEXT, finish_date DATE, description TEXT)');
+
     console.log('New tables created!');
     
-    // db.serialize(function() {
-    //   db.run('INSERT INTO Dreams (dream) VALUES ("Find and count some sheep"), ("Climb a really tall mountain"), ("Wash the dishes")');
-    // });
+    db.serialize(function() {
+      db.run('INSERT INTO tasks (text_name, finish_date, description) VALUES ("Finish Projects", "2018-08-10", "We should finish.")');
+    });
   } else 
   {
-    // console.log('Database "Dreams" ready to go!');
-    // db.each('SELECT * from Dreams', function(err, row) {
-    //   if ( row ) {
-    //     console.log('record:', row);
-    //   }
-    // });
+    console.log('Database "tasks" ready to go!');
+    db.each('SELECT * from tasks', function(err, row) {
+      if ( row ) {
+        console.log('record:', row);
+      }
+    });
   }
 });
 
@@ -57,8 +57,8 @@ app.get('/', function(request, response) {
 
 // endpoint to get all the dreams in the database
 // read the sqlite3 module docs and try to add your own! https://www.npmjs.com/package/sqlite3
-app.get('/getGroups', function(request, response) {
-  db.all('SELECT * from group', function(err, rows) {
+app.get('/getTasks', function(request, response) {
+  db.all('SELECT * from tasks', function(err, rows) {
     response.send(JSON.stringify(rows));
   });
 });
@@ -66,7 +66,7 @@ app.get('/getGroups', function(request, response) {
 app.post('/newGroups', function(request, response) {
   db.serialize(function() {
     // this is insecure! lookup "SQL injection"
-    db.run('INSERT INTO group (owner, name_group) VALUES ((owner), (name_group))');
+    db.run('INSERT INTO tasks (text_name, finish_date, description) VALUES ("' + request.body.name + '", "' + request.body.date + '", "' + request.body.description + '")');
   });
 });
 

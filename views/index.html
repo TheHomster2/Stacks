@@ -151,7 +151,7 @@
             </div>
           </div>  
                     
-        <div class=".container">
+        <div class=".container">          
           <div class="board .item ">
             <div class="list-group">
               <div>
@@ -165,163 +165,36 @@
                 </a>
                 <button type="button" style="display: inline-block; float: right; margin-top:4px ;" class="btn btn-light"><span data-feather="more-horizontal"></span></button>
               </div>
-              <div class="list-group">
-                <a class="cards-select list-group-item list-group-item-action flex-column align-items-start list-group-item-success" id="showForm">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Card 1</h5>
-                    <div style="float: right;"> 
-                      <small >Aug 8</small>
-                      <button type="button"><span data-feather="edit"></span></button>
-                    </div>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                </a>
-                <div class=" list-group-item list-group-item-action flex-column align-items-start list-group-item">
-                  <div class="d-flex w-100 justify-content-between">
-                    <input class="form-control form-control-sm" style="width: 55%;" type="text" value="Card 1">
-                    <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="date" value="2018-07-07" min="2000-01-01"></small>
-                 </div>
-                  <textarea class="form-control" rows="2"> value</textarea>
-                  <button type="button" class="btn btn-outline-success" style="padding: 4px; width: 49%;">Edit</button>
-                  <button type="button" class="btn btn-outline-danger" style="padding: 4px; width: 49%; float: right;">Cancel</button>
+              <div class="list-group groups">
+                <div id="groups">
                 </div>
-                  <div class=" list-group-item list-group-item-action flex-column align-items-start list-group-item">
+                <form id="editGroupForm">
                     <div class="d-flex w-100 justify-content-between">
                       <input class="form-control form-control-sm" style="width: 55%;" type="text" value="Card 1">
                       <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="date" value="2018-07-07" min="2000-01-01"></small>
                    </div>
-                    <textarea class="form-control" rows="2"> value</textarea>
-                    <button type="button" class="btn btn-outline-success" style="padding: 4px; width: 49%;">Create</button>
-                    <button type="button" class="btn btn-outline-danger" style="padding: 4px; width: 49%; float: right;">Cancel</button>
-                  </div>
-                <button type="button" class="btn btn-outline-secondary btn-lg btn-block" style="padding: 4px;">Block level button</button>
+                    <textarea class="form-control" rows="2" name="groupInputDescription"> value</textarea>
+                    <button type="button" class="btn btn-outline-success" style="padding: 4px; width: 32%;" id="edit-group">Edit</button>
+                    <button type="button" class="btn btn-outline-success" style="padding: 4px; width: 32%;" id="edit-group">Delete</button>
+                    <button type="button" class="btn btn-outline-danger" style="padding-top: 4px; padding-bottom: 4px; padding-left: 4px; width: 32%; float: right;">Cancel</button>
+                </form>
+                  <form id="groupform">
+                    <div class="d-flex w-100 justify-content-between">
+                      <input class="form-control form-control-sm" style="width: 55%;" type="text" name="groupInput" value="Card 1" aria-labelledby="submit-dream">
+                      <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="groupInputDate" value="2018-07-07" min="2000-01-01"></small>
+                   </div>
+                    <textarea class="form-control" rows="2"  name="groupInputDescription"> value</textarea>
+                    <button type="submit" class="btn btn-outline-success" style="padding: 4px; width: 49%;" id="submit-group">Create</button>
+                    <button type="button" class="btn btn-outline-danger" id="cancelForm" style="padding: 4px; width: 49%; float: right;" >Cancel</button>
+                  </form>
+                  <button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="displayForm" style="padding: 4px;">Block level button</button>
+                </div>
               </div>
             </div>
           </div>
-          
-          <div class="board .item ">
-            <div class="list-group">
-              <div>
-                <a class="boardLink" style="display: inline-block;"> 
-                  <div class="boardHeader">
-                    <h5>
-  <!--              <form><input id="boardName" type="text" placeholder="Todo"></form> -->
-                    ToDo
-                    </h5>
-                  </div>
-                </a>
-                <button type="button" style="display: inline-block; float: right; margin-top:4px ;" class="btn btn-light"><span data-feather="more-horizontal"></span></button>
-              </div>
-              <div class="list-group">
-                <a class="cards-select list-group-item list-group-item-action flex-column align-items-start list-group-item-success" id="sdhowForm">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Card 1</h5>
-                    <div style="float: right;"> 
-                      <small >Aug 8</small>
-                      <button type="button"><span data-feather="edit"></span></button>
-                    </div>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                </a>
-                <div class=" list-group-item list-group-item-action flex-column align-items-start list-group-item">
-                  <div class="d-flex w-100 justify-content-between">
-                    <input class="form-control form-control-sm" style="width: 55%;" type="text" value="Card 1">
-                    <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="date" value="2018-07-07" min="2000-01-01"></small>
-                 </div>
-                  <textarea class="form-control" rows="2"> value</textarea>
-                  <button type="button" class="btn btn-outline-success" style="padding: 4px; width: 49%;">Edit</button>
-                  <button type="button" class="btn btn-outline-danger" style="padding: 4px; width: 49%; float: right;">Cancel</button>
-                </div>
-                <div class=" list-group-item list-group-item-action flex-column align-items-start list-group-item">
-                  <div class="d-flex w-100 justify-content-between">
-                    <input class="form-control form-control-sm" style="width: 55%;" type="text" value="Card 1">
-                    <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="date" value="2018-07-07" min="2000-01-01"></small>
-                 </div>
-                  <textarea class="form-control" rows="2"> value</textarea>
-                  <button type="button" class="btn btn-outline-success" style="padding: 4px; width: 49%;">Create</button>
-                  <button type="button" class="btn btn-outline-danger" style="padding: 4px; width: 49%; float: right;">Cancel</button>
-                </div>
-                <button type="button" class="btn btn-outline-secondary btn-lg btn-block" style="padding: 4px;">Block level button</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-          <!-- Stacks and Cards -->
-<!--           <div class="board">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
-              <h1 class="h6" style="display: inline-block;">Todo</h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                  <div class="btn-group mr-2">
-                    <button class="btn btn-sm btn btn-light" style="display: inline-block;">
-                      <span data-feather="more-horizontal"></span>
-                    </button>
-                  </div>
-                </div>
-             </div>
-              <div class="card text-white bg-success mb-3 cards-select" style="max-width: 18rem;">
-                  <div class="card-header d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
-                    Finish button
-                    <div>
-                      <span data-feather="check-circle"></span>
-                      Jul 4
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Joe Suzuki </h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-              </div>
-              <div class="addCardButton"> 
-                <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" onclick="addCard()">
-                    <span data-feather="plus"></span> Add another card
-                </button>
-              </div>
-          </div>
-          <div class="board">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
-              <h1 class="h6" style="display: inline-block;">Finished</h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                  <div class="btn-group mr-2">
-                     <button class="btn btn-sm btn btn-light" style="display: inline-block;">
-                      <span data-feather="more-horizontal"></span>
-                      </button>
-                  </div> 
-                </div>
-              </div>
-              <div class="card bg-light mb-3 cards-select" style="max-width: 18rem;">
-                <div class="card-header d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">Finish popup
-                  <div>
-                    <span data-feather="alert-circle"></span>
-                    Aug 10
-                  </div>    
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Anthony Hom</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div> 
-              <div id="boards"> 
-
-              </div>
-              <div class="addCardButton"> 
-                <button class="btn btn-sm btn-outline-secondary" style="width: 100%;" onclick="addCard()">
-                    <span data-feather="plus"></span> Add another card
-                </button>
-            </div>
-          </div>
-          <div class="board">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2">
-                <div style="width: 18rem;">
-                  <button class="btn btn-sm btn-outline-secondary" style="width: 100%;">
-                      <span data-feather="plus"></span> Add another list
-                  </button>
-                </div> 
-              </div>
-            </div> -->
           </main>
+        </div>
       </div>
-    </div>
 
     <!-- Loads page faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

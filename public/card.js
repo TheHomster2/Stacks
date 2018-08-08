@@ -53,13 +53,13 @@ function deleteCard(e) {
 }
 
 // Listens to boardCardList to know if card has been clicked
-var boardCardList = document.getElementById('boardCardList');
-if (boardCardList.addEventListener) {
-  boardCardList.addEventListener('click', function(e) {
-    deleteCard(e);  
-  }, false);
-} else {
-  boardCardList.attachEvent('onclick', function(e){
-    deleteCard(e);  
-  });
-}
+// var boardCardList = document.getElementById('boardCardList');
+// if (boardCardList.addEventListener) {
+//   boardCardList.addEventListener('click', function(e) {
+//     deleteCard(e);  
+//   }, false);
+// } else {
+//   boardCardList.attachEvent('onclick', function(e){
+//     deleteCard(e);  
+//   });
+// }
