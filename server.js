@@ -36,18 +36,17 @@ db.serialize(function(){
     
     console.log('New tables created!');
     
-    // insert default dreams
-    db.serialize(function() {
-      db.run('INSERT INTO Dreams (dream) VALUES ("Find and count some sheep"), ("Climb a really tall mountain"), ("Wash the dishes")');
-    });
-  }
-  else {
-    console.log('Database "Dreams" ready to go!');
-    db.each('SELECT * from Dreams', function(err, row) {
-      if ( row ) {
-        console.log('record:', row);
-      }
-    });
+    // db.serialize(function() {
+    //   db.run('INSERT INTO Dreams (dream) VALUES ("Find and count some sheep"), ("Climb a really tall mountain"), ("Wash the dishes")');
+    // });
+  } else 
+  {
+    // console.log('Database "Dreams" ready to go!');
+    // db.each('SELECT * from Dreams', function(err, row) {
+    //   if ( row ) {
+    //     console.log('record:', row);
+    //   }
+    // });
   }
 });
 
@@ -58,16 +57,16 @@ app.get('/', function(request, response) {
 
 // endpoint to get all the dreams in the database
 // read the sqlite3 module docs and try to add your own! https://www.npmjs.com/package/sqlite3
-app.get('/getDreams', function(request, response) {
-  db.all('SELECT * from Dreams', function(err, rows) {
+app.get('/getGroups', function(request, response) {
+  db.all('SELECT * from group', function(err, rows) {
     response.send(JSON.stringify(rows));
   });
 });
 
-app.post('/newDreams', function(request, response) {
+app.post('/newGroups', function(request, response) {
   db.serialize(function() {
     // this is insecure! lookup "SQL injection"
-    db.run('INSERT INTO Dreams (dream) VALUES ("' + request.body.dream + '")');
+    db.run('INSERT INTO group (owner, name_group) VALUES ((owner), (name_group))');
   });
 });
 

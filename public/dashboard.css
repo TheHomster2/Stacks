@@ -102,6 +102,11 @@ body {
   border-radius: 8px;
   margin-right: 4px;
 }
+
+.boardHeader {
+  margin-top: 12px;
+  margin-left: 8px;
+}
 .container {
   display: flex; 
   align-items: flex-start;

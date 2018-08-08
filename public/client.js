@@ -24,7 +24,7 @@ const getDreamsListener = function() {
 // request the dreams from our app's sqlite database
 const dreamRequest = new XMLHttpRequest();
 dreamRequest.onload = getDreamsListener;
-dreamRequest.open('get', '/getDreams');
+dreamRequest.open('get', '/getProjects');
 dreamRequest.send();
 
 // a helper function that creates a list item for a given dream
