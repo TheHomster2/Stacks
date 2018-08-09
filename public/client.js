@@ -1,8 +1,20 @@
 // client-side js
 // run by the browser each time your view template referencing it is loaded
 
-console.log('hello world :o');
+// const uniqueID = (function() {
+//    var id = 0; 
+//    return function() { return id++; };  // Return and increment
+// })(); 
+var incr = (function () {
+    var i = 1;
 
+    return function () {
+        return i++;
+    }
+})();
+
+console.log('hello world :o');
+ 
 let groups = [];
 
 // request the dreams from our app's sqlite database
@@ -41,7 +53,7 @@ groupRequest.send();
 const appendNewGroup = function(name, date, description) {
   
   const spanImg = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-edit\"><path d=\"M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34\"></path><polygon points=\"18 2 22 6 12 16 8 16 8 12 18 2\"></polygon></svg>"
-  var entry = "<a class=\"cards-select list-group-item list-group-item-action flex-column align-items-start list-group-item-success\" id=\"sdhowForm\" style=\"margin-bottom: 8px;\"><div class=\"d-flex w-100 justify-content-between\"><h5 class=\"mb-1\">" + name +"</h5><div style=\"float: right;\"> <small>" + date + "</small><button type=\"button\">" + spanImg + "</button></div></div><p class=\"mb-1\">" + description + "</p></a>";
+  var entry = "<a id=\"houseOfCards" + incr() + "\"class=\"cards-select list-group-item list-group-item-action flex-column align-items-start list-group-item-success\" id=\"showForm\" style=\"margin-bottom: 8px;\"><div class=\"d-flex w-100 justify-content-between\"><h5 class=\"mb-1\">" + name +"</h5><div style=\"float: right;\"> <small>" + date + "</small><button type=\"button\" id=\"displayForms\">" + spanImg + "</button></div></div><p class=\"mb-1\">" + description + "</p></a>";
 
   const newListItem = document.createElement('div');
   newListItem.innerHTML = entry;

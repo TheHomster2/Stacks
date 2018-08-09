@@ -63,3 +63,46 @@ function deleteCard(e) {
 //     deleteCard(e);  
 //   });
 // }
+
+$(document).ready(function(){
+  $('a').on('click', function(){
+      $("#houseOfCards0").toggleClass("list-group-item-primary list-group-item-secondary list-group-item-success list-group-item-danger list-group-item-info list-group-item-light list-group-item-dark list-group-item-warning")
+    });
+});
+
+
+// $(document).ready(function(){
+//   var cards = document.getElementsByClassName('cards-select').length;
+  // for (var i = 0; i < cards; i++){
+    // if (!$(this).hasClass('list-group-item-success')) {
+    //   $("#houseOfCards").toggleClass("list-group-item-primary list-group-item-success list-group-item-danger list-group-item-info list-group-item-light list-group-item-dark list-group-item-warning")
+    // }
+    // else{
+    //   $("#houseOfCards").toggleClass("list-group-item-primary list-group-item-secondary list-group-item-success list-group-item-danger list-group-item-info list-group-item-light list-group-item-dark list-group-item-warning")
+    // }
+    // $('#houseOfCards').on('click', function () {
+    //   this.toggleClass("list-group-item-primary");
+    // });
+  // }
+// });
+
+//     ($('#houseOfCards').on('click', function(){
+    // if ($class*="list-group-item-success"){
+      // $("#houseOfCards").toggleClass("list-group-item-primary list-group-item-secondary list-group-item-success list-group-item-danger list-group-item-info list-group-item-light list-group-item-dark list-group-item-warning")
+    
+//       }
+//     );
+
+//   });
+     
+     
+//  $("a").click(function(e) {
+//     e.preventDefault();
+//     if (!$(this).hasClass('className')) {
+//         alert("You did not click className!");
+//     }
+// });
+
+// $('span').on('click', function () {
+//     alert(this.id);
+// });
