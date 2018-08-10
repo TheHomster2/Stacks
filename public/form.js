@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var $newItemButton = $('#displayForm');
-  var $newItemForm = $('#groupform');
+  var $newItemForm = $('#taskform');
 
   // Hides form until add card button is clicked
   $newItemButton.show();
@@ -22,7 +22,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   var $newItemButton = $('#cancelForm');
   var $newItemButton2 = $('#displayForm');
-  var $newItemForm = $('#groupform');
+  var $newItemForm = $('#taskform');
   
   $('#cancelForm').on('click', function(){
     $newItemForm.hide();

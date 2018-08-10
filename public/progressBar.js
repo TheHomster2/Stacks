@@ -5,7 +5,7 @@
 // var successCards = $('.cards-select.bg-success').length;
 
 // for(var i = 0; i < cards; i++){
-// 	if ($class*="bg-success"){
+	// if ($class*="bg-success"){
 // 		successCards += 1;
 // 	}
 // }
@@ -20,3 +20,4 @@ $(document).ready(function(){
   document.getElementById('progress-bar').style.width = (Math.round(( 100 * percentage))) + '%';
   document.getElementById('progress-bar').innerHTML = (Math.round((100 * percentage))) + '%';
 });
+

@@ -28,7 +28,7 @@ function createCard(e) {
 }
 
 
-function readCard() {
+function readCard() {  
 
 }
 function updateCard() {
@@ -64,12 +64,35 @@ function deleteCard(e) {
 //   });
 // }
 
-$(document).ready(function(){
-  $('a').on('click', function(){
-      $("#houseOfCards0").toggleClass("list-group-item-primary list-group-item-secondary list-group-item-success list-group-item-danger list-group-item-info list-group-item-light list-group-item-dark list-group-item-warning")
-    });
-});
+// $(document).ready(function(){
+//   $('a').on('click', function(){
+//       var selectedId = this.id;
+//     console.log('test'); 
+//       $("#" + selectedId).toggleClass("list-group-item-success list-group-item-primary list-group-item-secondary list-group-item-danger list-group-item-info list-group-item-light list-group-item-dark list-group-item-warning");
+//     });
+// });
 
+function toggleColor(id){
+  // $('a').each(function(){
+    // var classes = ['list-group-item-success', 'list-group-item-primary', 'list-group-item-secondary', 'list-group-item-danger', 'list-group-item-info', 'list-group-item-light', 'list-group-item-dark', 'list-group-item-warning'];
+  //   this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
+  // });
+  // var selectedId = this.id;
+  
+  // if ($("#houseOfCards" + id).hasClass('list-group-item-success')){ // <- not working we also have to add tags into the databse
+  //     $("#houseOfCards" + id).toggleClass("list-group-item-primary");
+  // }
+  // else{ 
+  //   $("#houseOfCards" + id).toggleClass("list-group-item-success");
+  // }
+  $("#houseOfCards" + id).toggleClass("list-group-item-light").toggleClass("list-group-item-light").toggleClass("list-group-item-danger").toggleClass("list-group-item-info").toggleClass("list-group-item-light").toggleClass("list-group-item-light").toggleClass("list-group-item-light").toggleClass("list-group-item-success");
+}
+                
+// function toggleColor(){
+//       var selectedId = this.id;
+//       console.log('test', this); 
+//       $("#" + selectedId).toggleClass("list-group-item-success list-group-item-primary list-group-item-secondary list-group-item-danger list-group-item-info list-group-item-light list-group-item-dark list-group-item-warning");
+//     }
 
 // $(document).ready(function(){
 //   var cards = document.getElementsByClassName('cards-select').length;

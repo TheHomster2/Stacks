@@ -36,17 +36,17 @@ db.serialize(function(){
 
     console.log('New tables created!');
     
-    db.serialize(function() {
-      db.run('INSERT INTO tasks (text_name, finish_date, description) VALUES ("Finish Projects", "2018-08-10", "We should finish.")');
-    });
+    // db.serialize(function() {
+    //   db.run('INSERT INTO tasks (text_name, finish_date, description) VALUES ("Finish Projects", "2018-08-10", "We should finish.")');
+    // });
   } else 
   {
-    console.log('Database "tasks" ready to go!');
-    db.each('SELECT * from tasks', function(err, row) {
-      if ( row ) {
-        console.log('record:', row);
-      }
-    });
+    // console.log('Database "tasks" ready to go!');
+    // db.each('SELECT * from tasks', function(err, row) {
+    //   if ( row ) {
+    //     console.log('record:', row);
+    //   }
+    // });
   }
 });
 
@@ -63,7 +63,7 @@ app.get('/getTasks', function(request, response) {
   });
 });
 
-app.post('/newGroups', function(request, response) {
+app.post('/newTasks', function(request, response) {
   db.serialize(function() {
     // this is insecure! lookup "SQL injection"
     db.run('INSERT INTO tasks (text_name, finish_date, description) VALUES ("' + request.body.name + '", "' + request.body.date + '", "' + request.body.description + '")');

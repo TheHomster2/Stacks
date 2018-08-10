@@ -166,28 +166,28 @@
                 <button type="button" style="display: inline-block; float: right; margin-top:4px ;" class="btn btn-light"><span data-feather="more-horizontal"></span></button>
               </div>
               <div class="list-group groups">
-                <div id="groups">
+                <div id="tasks">
                 </div>
                 <form id="editGroupForm">
                     <div class="d-flex w-100 justify-content-between">
                       <input class="form-control form-control-sm" style="width: 55%;" type="text" value="Card 1">
                       <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="date" value="2018-07-07" min="2000-01-01"></small>
                    </div>
-                    <textarea class="form-control" rows="2" name="groupInputDescription"> value</textarea>
-                    <button type="submit" class="btn btn-outline-success" style="padding: 4px; width: 32%;" id="edit-group">Edit</button>
-                    <button type="submit" class="btn btn-outline-success" style="padding: 4px; width: 32%;" id="delete-group">Delete</button>
-                    <button type="button" class="btn btn-outline-danger" id="cancelForms" style="padding-top: 4px; padding-bottom: 4px; padding-left: 4px; width: 32%; float: right;">Cancel</button>
+                    <textarea class="form-control" rows="2" name="taskInputDescription"> value</textarea>
+                    <button type="submit" class="btn btn-outline-success" style="width: 33%;" id="edit-group">Edit</button>
+                    <button type="submit" class="btn btn-outline-success" style="width: 32%;" id="delete-group">Delete</button>
+                    <button type="button" class="btn btn-outline-danger" id="cancelForms" style="width: 33%; float: right;">Cancel</button>
                 </form>
-                  <form id="groupform">
+                  <form id="taskform">
                     <div class="d-flex w-100 justify-content-between">
-                      <input class="form-control form-control-sm" style="width: 55%;" type="text" name="groupInput" value="Card 1" aria-labelledby="submit-dream">
-                      <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="groupInputDate" value="2018-07-07" min="2000-01-01"></small>
+                      <input class="form-control form-control-sm" style="width: 55%;" type="text" name="taskInput" value="Card 1" aria-labelledby="submit-dream">
+                      <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="taskInputDate" value="2018-07-07" min="2000-01-01"></small>
                    </div>
-                    <textarea class="form-control" rows="2"  name="groupInputDescription"> value</textarea>
+                    <textarea class="form-control" rows="2"  name="taskInputDescription"> value</textarea>
                     <button type="submit" class="btn btn-outline-success" style="padding: 4px; width: 49%;" id="submit-group">Create</button>
                     <button type="button" class="btn btn-outline-danger" id="cancelForm" style="padding: 4px; width: 49%; float: right;" >Cancel</button>
                   </form>
-                  <button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="displayForm" style="padding: 4px;">Block level button</button>
+                  <button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="displayForm" style="padding: 4px;">Add another card</button>
                 </div>
               </div>
             </div>
@@ -203,10 +203,10 @@
     
     <script src="project.js"></script>
     <script src="progressBar.js"></script>
-    <script src="card.js"></script>
     <script src="form.js"></script>
     <script src="board.js"></script>
-        
+    <script src="card.js" defer></script>
+
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
