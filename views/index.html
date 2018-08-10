@@ -16,6 +16,8 @@
     <link href="dashboard.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/client.js" defer></script>
+    <script src="/groupsClient.js" defer></script>
+    <script src="/boardsClient.js" defer></script>
   </head>
 
   <body>
@@ -57,42 +59,24 @@
                       </span>
                     </div>      
                     <div class="pop-over-contentjs-pop-over-contentu-fancy-scrollbarjs-tab-parent" style="max-height: 532px;">
-                        <form>
+                        <form id="groupform">
                           <p class="error"></p>
                           <label for="org-display-name">Name</label>
-                          <input class="pop-up-input" id="org-display-name"  type="text" name="displayName" value="" dir="auto" maxlength="100">
+                          <input class="pop-up-input" id="org-display-name" type="text" name="displayName" value="" dir="auto" maxlength="100">
                           <label for="org-desc">Description</label>
                           <textarea class="pop-up-txt" name="org-desc" dir="auto"></textarea>
-                          <input class="submit-button" id = "submit" type="submit" value="Create" disabled="true">
+                          <input class="submit-button" id="submit" type="submit" value="Create" disabled="true">
                         </form>
                     </div>                    
                   </div>
                 </div>
               <!-- </a> -->
             </h6>
-            <ul class="nav flex-column mb-1" id = "groupHeaderList">
+            <ul class="nav flex-column mb-1" id="groups">
               <li class="nav-item">
                 <a class="nav-link active" href="#">
                   <span data-feather="hash"></span>
                   Group 1
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="hash"></span>
-                  Group 2
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="hash"></span>
-                  Group 3
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="hash"></span>
-                  Group 4
                 </a>
               </li>
             </ul>
@@ -151,66 +135,67 @@
             </div>
           </div>  
                     
-        <div class=".container">          
+        <div class=".container" >          
           <div class="board .item ">
             <div class="list-group">
               <div>
                 <a class="boardLink" style="display: inline-block;"> 
                   <div class="boardHeader">
                     <h5>
-  <!--              <form><input id="boardName" type="text" placeholder="Todo"></form> -->
                     ToDo
                     </h5>
                   </div>
                 </a>
                 <button type="button" style="display: inline-block; float: right; margin-top:4px ;" class="btn btn-light"><span data-feather="more-horizontal"></span></button>
               </div>
-              <div class="list-group groups">
-                <div id="groups">
+              <div class="list-group">
+                <div id="tasks">
                 </div>
                 <form id="editGroupForm">
                     <div class="d-flex w-100 justify-content-between">
-                      <input class="form-control form-control-sm" style="width: 55%;" type="text" value="Card 1">
-                      <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="date" value="2018-07-07" min="2000-01-01"></small>
+                      <input class="form-control form-control-sm" id="nameCard" name="editName" style="width: 55%;" type="text" value="Card 1">
+                      <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="editDate" value="2018-07-07" min="2000-01-01"></small>
                    </div>
-                    <textarea class="form-control" rows="2" name="groupInputDescription"> value</textarea>
-                    <button type="button" class="btn btn-outline-success" style="padding: 4px; width: 32%;" id="edit-group">Edit</button>
-                    <button type="button" class="btn btn-outline-success" style="padding: 4px; width: 32%;" id="edit-group">Delete</button>
-                    <button type="button" class="btn btn-outline-danger" style="padding-top: 4px; padding-bottom: 4px; padding-left: 4px; width: 32%; float: right;">Cancel</button>
+                    <textarea class="form-control" rows="2" name="editDescription"> value</textarea>
+                    <button type="submit" class="btn btn-success" style="width: 33%;" value="edit-group" id="edit-group">Edit</button>
+                    <button type="submit" class="btn btn-danger" style="width: 32%;" value="delete-group" id="delete-group">Delete</button>
+                    <button type="button" class="btn btn-info" id="cancelForms" style="width: 33%; float: right;">Cancel</button>
                 </form>
-                  <form id="groupform">
+                  <form id="taskform">
                     <div class="d-flex w-100 justify-content-between">
-                      <input class="form-control form-control-sm" style="width: 55%;" type="text" name="groupInput" value="Card 1" aria-labelledby="submit-dream">
-                      <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="groupInputDate" value="2018-07-07" min="2000-01-01"></small>
+                      <input class="form-control form-control-sm" style="width: 55%;" type="text" name="taskInput" value="Card 1" aria-labelledby="submit-dream">
+                      <small><input type="date" class="form-control form-control-sm" style="width: 88%; float: right;" name="taskInputDate" value="2018-07-07" min="2000-01-01"></small>
                    </div>
-                    <textarea class="form-control" rows="2"  name="groupInputDescription"> value</textarea>
-                    <button type="submit" class="btn btn-outline-success" style="padding: 4px; width: 49%;" id="submit-group">Create</button>
-                    <button type="button" class="btn btn-outline-danger" id="cancelForm" style="padding: 4px; width: 49%; float: right;" >Cancel</button>
+                    <textarea class="form-control" rows="2"  name="taskInputDescription"> value</textarea>
+                    <button type="submit" class="btn btn-success" style="padding: 4px; width: 49%;" id="submit-group">Create</button>
+                    <button type="button" class="btn btn-danger" id="cancelForm" style="padding: 4px; width: 49%; float: right;" >Cancel</button>
                   </form>
-                  <button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="displayForm" style="padding: 4px;">Block level button</button>
+                  <button type="button" class="btn btn-outline-secondary btn-lg btn-block" id="displayForm" style="padding: 4px;">Add another card</button>
                 </div>
               </div>
             </div>
           </div>
-          </main>
-        </div>
+        </main>
       </div>
+    </div>
+
+<!--                     <div id="taskss"></div> -->
 
     <!-- Loads page faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
-    <script src="project.js"></script>
+    <script src="project.js" defer></script>
     <script src="progressBar.js"></script>
-    <script src="card.js"></script>
     <script src="form.js"></script>
     <script src="board.js"></script>
-        
+    <script src="card.js" defer></script>
+
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
     </script>
   </body>
-</html>zz
+</html>

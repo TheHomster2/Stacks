@@ -37,6 +37,14 @@ window.onclick = function(event) {
 //   dreamInput.value = '';
 //   dreamInput.focus();
 // };
+const createNewGroupss = function(owner, name_group) {
+  console.log("Create new group");
+  const createNewGroup = new XMLHttpRequest();
+  const params = "owner=" + owner + "&name_group=" + name_group;
+  createNewGroup.open('POST', '/newGroups');
+  createNewGroup.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  createNewGroup.send(params);
+}
 
 document.getElementById('submit').onclick = function(event){
   event.preventDefault();
@@ -51,10 +59,10 @@ document.getElementById('submit').onclick = function(event){
   var newEl = document.createElement('li');
   newEl.innerHTML = entry;
   
-  // var newText = document.createTextNode(project_name);
-  // newEl.appendChild(newText);
-
-  document.getElementById("groupHeaderList").appendChild(newEl);
+//   // var newText = document.createTextNode(project_name);
+//   // newEl.appendChild(newText);
+  createNewGroupss("Joe", project_name);
+  document.getElementById("groups").appendChild(newEl);
   document.getElementById("org-display-name").value = '';
   project_name.focus();
 }
