@@ -52,7 +52,6 @@ $(document).ready(function(){
   
 });
 
-
 $(document).ready(function(){
   var $newItemButton = $('#cancelForms');
   var $newItemButton2 = $('#displayForms');

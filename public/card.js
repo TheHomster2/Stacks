@@ -35,8 +35,6 @@ function updateCard(e) {
   target = getTarget(e);
   elParent = target.parentNode;
   elGrandParent = target.parentNode.parentNode;
-  
-  
 }
 function deleteCard(e) {
   // Remove item from the list
@@ -89,6 +87,7 @@ function toggleColor(id){
   // else{ 
   //   $("#houseOfCards" + id).toggleClass("list-group-item-success");
   // }
+
   $("#houseOfCards" + id).toggleClass("list-group-item-success");
 }
 
