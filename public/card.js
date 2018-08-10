@@ -5,34 +5,36 @@ function getTarget(e) {
   return e.target || e.srcElement;
 }
 
-function createCard(e) {
+// function createCard(e) {
+//   var target;
+//   var elParent; 
+//   var elGrandParent;
+//   target = getTarget(e);
+//   elParent = target.parentNode;
+//   elGrandParent = target.parentNode.parentNode;
+
+//   var newEl = document.createElement('li');
+//   var newText = document.createTextNode('node');
+//   newEl.appendChild(newText);
+
+//   elGrandParent.appendChild(newEl);
+
+//   // Prevent the link from refreshing page
+//   if(e.preventDefault) {
+//     e.preventDefault();
+//   } else {
+//     e.returnValue = false;
+//   }
+// }
+
+function updateCard(e) {
+  // Update item from the list
   var target;
   var elParent; 
   var elGrandParent;
   target = getTarget(e);
   elParent = target.parentNode;
   elGrandParent = target.parentNode.parentNode;
-
-  var newEl = document.createElement('li');
-  var newText = document.createTextNode('node');
-  newEl.appendChild(newText);
-
-  elGrandParent.appendChild(newEl);
-
-  // Prevent the link from refreshing page
-  if(e.preventDefault) {
-    e.preventDefault();
-  } else {
-    e.returnValue = false;
-  }
-}
-
-
-function readCard() {  
-
-}
-function updateCard() {
-
 }
 function deleteCard(e) {
   // Remove item from the list
@@ -85,8 +87,11 @@ function toggleColor(id){
   // else{ 
   //   $("#houseOfCards" + id).toggleClass("list-group-item-success");
   // }
-  $("#houseOfCards" + id).toggleClass("list-group-item-light").toggleClass("list-group-item-light").toggleClass("list-group-item-danger").toggleClass("list-group-item-info").toggleClass("list-group-item-light").toggleClass("list-group-item-light").toggleClass("list-group-item-light").toggleClass("list-group-item-success");
+
+  $("#houseOfCards" + id).toggleClass("list-group-item-success");
 }
+
+
                 
 // function toggleColor(){
 //       var selectedId = this.id;

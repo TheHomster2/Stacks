@@ -31,17 +31,18 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  var $newItemButton = $('#displayForms');
+  var $newItemButton = $('.displayForms');
   var $newItemForm = $('#editGroupForm');
-
+  
   // Hides form until add card button is clicked
   $newItemButton.show();
   $newItemForm.hide();
 
-  $('#displayForms').on('click', function(){
-    $newItemButton.hide();
-    $newItemForm.show();
-  });
+  // $('#displayForms').on('click', function(){
+  //   $newItemButton.hide();
+  //   console.log(this.parentNode.parentNode.parentNode);
+  //   $newItemForm.show();
+  // });
 
   // Get value from input field and create a new list child node
   $newItemForm.on('submit', function(e){
@@ -61,3 +62,13 @@ $(document).ready(function(){
     $newItemButton2.show();
   }); 
 });
+
+
+// $(function () {
+//     $("#editGroupForm button").click(function (ev) {
+//         ev.preventDefault() // cancel form submission
+//         if ($(this).attr("value") == "delete-group") {
+//             //do button 1 thing
+//         }
+//     });
+// });

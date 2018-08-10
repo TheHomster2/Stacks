@@ -20,9 +20,14 @@ const taskForm = document.getElementById('taskform');
 const taskInput = taskForm.elements['taskInput'];
 const taskInputDate = taskForm.elements['taskInputDate'];
 const taskInputDescription = taskForm.elements['taskInputDescription'];
+const editGroupForm = document.getElementById('editGroupForm');
+
+const taskEditInput = editGroupForm.elements['editName'];
+const taskEditInputDate = editGroupForm.elements['editDate'];
+const taskEditInputDescription = editGroupForm.elements['editDescription'];
 
 // a helper function to call when our request for dreams is done
-const getGroupListener = function() {
+const getTaskListener = function() {
   // parse our response to convert to JSON
   tasks = JSON.parse(this.responseText);
 
@@ -32,37 +37,23 @@ const getGroupListener = function() {
   });
   
     console.log(tasks);
+
 }
 
 // request the dreams from our app's sqlite database
-const groupRequest = new XMLHttpRequest();
-groupRequest.onload = getGroupListener;
-groupRequest.open('get', '/getTasks');
-groupRequest.send();
+const taskRequest = new XMLHttpRequest();
+taskRequest.onload = getTaskListener;
+taskRequest.open('get', '/getTasks');
+taskRequest.send();
 
 // a helper function that creates a list item for a given dream
-const appendNewTask = function(name, date, description, id) {
-  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  var dates = new Date(date).toLocaleDateString('en-US', {
-    day : 'numeric',
-    month : 'short'
-  }).split(' ').join('-').replace('-', ' ');
-  // var today = new Date(date);
-  // console.log(new Date(date));
-  // console.log(today);
-  // console.log(today.toLocaleDateString("en-US", options)); // Saturday, September 17, 2016
-  
+const appendNewTask = function(name, date, description, id){  
   const spanImg = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-edit\"><path d=\"M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34\"></path><polygon points=\"18 2 22 6 12 16 8 16 8 12 18 2\"></polygon></svg>"
-  var entry = "<a onclick=\"toggleColor(" + id + ")\" id=\"houseOfCards" + id + "\" class=\"cards-select list-group-item list-group-item-action flex-column align-items-start list-group-item-success\" id=\"showForm\" style=\"margin-bottom: 8px;\"><div class=\"d-flex w-100 justify-content-between\"><h5 class=\"mb-1\">" + name +"</h5><div style=\"float: right;\">" + dates + "<button type=\"button\" id=\"displayForms\" onclick=\"showEditForm(" + id + ")\"" + "\">" + spanImg + "</button></div></div><p class=\"mb-1\">" + description + "</p></a>";
+  var entry = "<a id=\"houseOfCards" + id + "\" class=\"cards-select list-group-item list-group-item-action flex-column align-items-start list-group-item-primary\" id=\"showForm\" style=\"margin-bottom: 8px;\"><div class=\"d-flex w-100 justify-content-between\"><h5 class=\"mb-1\">" + name +"</h5><div style=\"float: right;\">" + date + "<button type=\"button\" onclick=\"editbutton(" + id + ")\" id=\"displayForms" + id + "\" \">" + spanImg + "</button></div></div><p class=\"mb-1\" onclick=\"toggleColor(" + id + ")\" >" + description + "</p></a>";
 
   const newListItem = document.createElement('div');
   newListItem.innerHTML = entry;
   taskList.appendChild(newListItem);
-  // $('a').on('click', function(){
-//       var selectedId = this.id;
-//     console.log('test'); 
-//       $("#" + selectedId).toggleClass("list-group-item-success list-group-item-primary list-group-item-secondary list-group-item-danger list-group-item-info list-group-item-light list-group-item-dark list-group-item-warning");
-//     });
 }
 
 const createNewTask = function(name, date, description) {
@@ -75,7 +66,6 @@ const createNewTask = function(name, date, description) {
 
 // listen for the form to be submitted and add a new group when it is
 taskForm.onsubmit = function(event) {
-  // stop our form submission from refreshing the page
   event.preventDefault();
 
   // get group value and add it to the list
@@ -91,5 +81,42 @@ taskForm.onsubmit = function(event) {
   taskInputDescription.value = '';
   taskInputDescription.focus();
 };
+
+var ids;
+function editbutton(id) {
+    var $newItemButton = $('.displayForms');
+    var $newItemForm = $('#editGroupForm');
+    $newItemButton = $('.displayForms' + id);
+    console.log(id);
+    ids = id;
+    $newItemButton.hide();
+    // console.log($n);
+    $newItemForm.show();
+}
+
+const updateNewTask = function(name, date, description, id) {
+    const updateNewTask = new XMLHttpRequest();
+    const params = "name=" + name + "&date=" + date + "&description=" + description +"&id=" + id;
+    updateNewTask.open('PUT', '/updateTasks');
+    updateNewTask.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    updateNewTask.send(params);
+  }
+
+editGroupForm.onsubmit = function(event){
+  event.preventDefault();
+  updateNewTask(taskEditInput.value, taskEditInputDate.value, taskEditInputDescription.value, ids);
+  taskList.innerHTML = "";
+  tasks = [];
+  taskRequest.ready = getTaskListener;
+  taskRequest.open('get', '/getTasks');
+  taskRequest.send();
+  
+  taskInput.value = '';
+  taskInput.focus();
+  taskInputDate.value = '';
+  taskInputDate.focus();
+  taskInputDescription.value = '';
+  taskInputDescription.focus();
+}
 
 
